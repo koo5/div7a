@@ -3,6 +3,7 @@
 describe('example to-do app', () => {
   beforeEach(() => {
 	cy.visit('https://www.ato.gov.au/Calculators-and-tools/Host/?anchor=DIV7A#DIV7A/questions')
+	//cy.clock()
   })
 
   it('generate_testcase', () => {
@@ -79,8 +80,10 @@ describe('example to-do app', () => {
 								let remaining = amalgamatedLoanNotPaidByEOIY;
 								let min = new Date(incomeYearOfLoan_number,        7-1, 1);
 								let max = new Date(incomeYearOfEnquiring_number+2 ,6-1, 30);
-								let density = Math.floor(Math.random() * 1000);
-								for (var d = new Date(min); d <= max && remaining > 0; d.setDate(d.getDate() + Math.floor(Math.random() * density)))
+								let sparsity = Math.floor(Math.random() * 1000);
+								let start = new Date(min);
+								start.setDate(start.getDate() + Math.floor(Math.random() * sparsity));
+								for (var d = new Date(min); d <= max && remaining > 0; d.setDate(d.getDate() + 1 + Math.floor(Math.random() * sparsity)))
 								{
 									let rd = d.getDate() + '/' + (d.getMonth()+1) + '/' + d.getFullYear();
 									let ra = Math.floor(Math.random() * 10000);
@@ -140,59 +143,23 @@ function f2(tc)
 {
 								
 	cy.contains('Show result').click();
-			
-	tc = {
-		...tc,
-		minimumYearRepaymentFormatted: cy.get('[data-bind="text: minimumYearRepaymentFormatted"]').innerText,
-		enquiryRateFormatted: cy.get('[data-bind="text: enquiryRateFormatted"]').innerText
-	}
+	cy.get('[data-bind="text: minimumYearRepaymentFormatted"]').then((el) => {
+		tc = {
+			...tc,
+			minimumYearRepaymentFormatted: el[0].innerText,
+		}
+		cy.get('[data-bind="text: enquiryRateFormatted"]').then((el) => {
+			tc = {
+				...tc,
+				enquiryRateFormatted: el[0].innerText,
+			}
+					
+			cy.writeFile('data/' + new Date().toISOString() + Math.random() + '.json', tc);
+			cy.writeFile('data/last.json', tc);
+			//cy.tick(10);
+		})
+		
+	})
 
-	cy.writeFile(new Date().toISOString() + Math.random() + '.json', tc);
 	
 }
-
-
-/*
-//cy.log(parseInt(v));
-
-		cy.get('[id=txt-loanAmount]').type('10000')
-		cy.get('[id=txt-interestRate]').type('10')
-		cy.get('[id=txt-repaymentThreshold]').type('
-
-
-<span data-bind="text: minimumYearRepaymentFormatted">$9,946.00</span>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-*/
