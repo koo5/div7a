@@ -11,12 +11,6 @@ describe('example to-do app', () => {
   it('generate_testcase', () => {
 
 	cy.contains('Calculate a minimum yearly repayment and the amount of the loan not repaid by the end of an income year').click()
-	
-	/* You must not assign results of cy.get() to variables, because they are not what you think they are.
-	*/
-
-	let tree = {incomeYearOfLoan:{}};
-
 	cy.get('[id=ddl-incomeYearOfLoan]').find('option').each(($el) => {
 		let incomeYearOfLoan_text = $el[0].innerText;
 		if (incomeYearOfLoan_text != " - Select -")
@@ -30,8 +24,8 @@ describe('example to-do app', () => {
 				incomeYearOfLoan:incomeYearOfLoan_number
 			};
 
-			let term = 1;
-			for (term = 1; term < 8; term++)
+
+			for (var term = 1; term < 8; term++)
 			{
 				cy.get('[id=textfullTermOfAmalgamatedLoan]').type('{selectall}{backspace}' + term,{delay: 0});
 
@@ -40,12 +34,6 @@ describe('example to-do app', () => {
 					if (incomeYearOfEnquiring_text !== " - Select -")
 					{
 						let incomeYearOfEnquiring_number = Number(incomeYearOfEnquiring_text.substring(0, 4)) + 1
-
-						tc = {
-							...tc,
-							fullTermOfAmalgamatedLoan: term,
-							incomeYearOfEnquiring:incomeYearOfEnquiring_number
-						}
 
 						cy.log('selecting ' + incomeYearOfEnquiring_text);
 						cy.get('[id=ddl-incomeYearOfEnquiring]').select(incomeYearOfEnquiring_text);
@@ -56,20 +44,17 @@ describe('example to-do app', () => {
 						else
 							amalgamatedLoanNotPaidByEOIY = Math.random() * 123000000
 						
-						tc = {
-							...tc,
-							amalgamatedLoanNotPaidByEOIY:amalgamatedLoanNotPaidByEOIY
-						}
-
 						cy.get('[id=textamalgamatedLoanNotPaidByEOIY]').type('{selectall}{backspace}' + amalgamatedLoanNotPaidByEOIY,{delay: 0});
 						cy.get('[id=vrb-calculateAmountOfTheAmalgamatedLoan-span-0]').click();
 
-							
-						tc = {
+						var tc = {
 							...tc,
-							repayments:[]
+							repayments:[],
+							fullTermOfAmalgamatedLoan: term,
+							incomeYearOfEnquiring:incomeYearOfEnquiring_number,
+							amalgamatedLoanNotPaidByEOIY:amalgamatedLoanNotPaidByEOIY,
 						}
-
+							
 						let remaining = amalgamatedLoanNotPaidByEOIY;
 						let min = new Date(incomeYearOfEnquiring_number-1 ,7-1, 1);
 						let max = new Date(incomeYearOfEnquiring_number   ,6-1, 30);
