@@ -22,10 +22,12 @@ describe('example to-do app', () => {
 			
 			let incomeYearOfLoan_number = Number(incomeYearOfLoan_text.substring(0, 4)) + 1
 			cy.get('[id=ddl-incomeYearOfLoan]').select(incomeYearOfLoan_text);
-			//let subtree = {};
-			//tree.incomeYearOfLoan[incomeYearOfLoan_text] = subtree;
 			cy.get('[id=vrb-loanType-span-1]').click();
 			
+			let tc = {
+				incomeYearOfLoan:incomeYearOfLoan_number
+			};
+
 			let term = 1;
 			for (term = 1; term < 8; term++)
 			{
@@ -36,36 +38,52 @@ describe('example to-do app', () => {
 					if (incomeYearOfEnquiring_text !== " - Select -")
 					{
 						let incomeYearOfEnquiring_number = Number(incomeYearOfEnquiring_text.substring(0, 4)) + 1
+
+						tc = {
+							...tc,
+							incomeYearOfEnquiring:incomeYearOfEnquiring_number
+						}
+
 						cy.log('selecting ' + incomeYearOfEnquiring_text);
 						cy.get('[id=ddl-incomeYearOfEnquiring]').select(incomeYearOfEnquiring_text);
 						
-						cy.get('[id=textamalgamatedLoanNotPaidByEOIY]').type('{selectall}{backspace}' + 123);
-						cy.get('[id=vrb-calculateAmountOfTheAmalgamatedLoan-span-0]').click();
+						let amalgamatedLoanNotPaidByEOIY;
+						if (Math.random() < 0.5)
+							amalgamatedLoanNotPaidByEOIY = Math.floor(Math.random() * 123)
+						else
+							amalgamatedLoanNotPaidByEOIY = Math.random() * 123000000
 						
-						if (incomeYearOfEnquiring_number - incomeYearOfLoan_number == 1)
-						{
-												
-							cy.get('[id=textlodgmentDate]').then(($el) => {
-		
-								let min = new Date(incomeYearOfLoan_number,  7-1, 1);
-								let max = new Date(incomeYearOfLoan_number+1,6-1, 30);
-		
-								for (var d = new Date(min); d <= max; d.setDate(d.getDate() + 1))
-								{
-									let lodgement_date_string = d.getDate() + '/' + (d.getMonth()+1) + '/' + d.getFullYear();
-									
-									cy.get('[id=textlodgmentDate]').type('{selectall}{backspace}' + lodgement_date_string)
-									
-									
-									
-								}
-							});
+						tc = {
+							...tc,
+							amalgamatedLoanNotPaidByEOIY:amalgamatedLoanNotPaidByEOIY
 						}
-						
-						
+
+						cy.get('[id=textamalgamatedLoanNotPaidByEOIY]').type('{selectall}{backspace}' + amalgamatedLoanNotPaidByEOIY);
+						cy.get('[id=vrb-calculateAmountOfTheAmalgamatedLoan-span-0]').click();
 
 						
-						cy.log('done.');
+						
+						
+						tc = {
+							...tc,
+							repayments:[]
+						}
+
+						let num_repayments = Math.floor(Math.random() * 12); 
+						for (var repayment_idx = 0; repayment_idx < num_repayments; repayment_idx++)
+						{
+							cy.get('[id="btn_repayment_add"]').click().then(() => 
+							{
+								let rd = '1/1/2020'
+								let ra = '100'
+								tc.repayments.push({rd,ra})
+								
+								cy.get('[id="textdateOfLoanRepaymentadd"]').type('{selectall}{backspace}' + rd);
+								cy.get('[id="textamountOfRepaymentadd"]').type('{selectall}{backspace}' + ra);
+								cy.get('[id="btn_repayment_save"]').click().then(f1(tc,incomeYearOfEnquiring_number,incomeYearOfLoan_number));
+							}
+							);
+						}
 					}	
 				})
 			}
@@ -74,9 +92,50 @@ describe('example to-do app', () => {
   })
 })
 
-function generate_testcase2(c)
+function f1(tc,incomeYearOfEnquiring_number,incomeYearOfLoan_number)
 {
-	cy.log(c)
+	if (incomeYearOfEnquiring_number - incomeYearOfLoan_number > 1)
+	{
+		f2({
+			...tc,
+			lodgement_date_string:lodgement_date_string
+		})
+	}
+	else
+	{
+
+		let min = new Date(incomeYearOfLoan_number,  7-1, 1);
+		let max = new Date(incomeYearOfLoan_number+1,6-1, 30);
+
+		for (var d = new Date(min); d <= max; d.setDate(d.getDate() + 1))
+		{
+			let lodgement_date_string = d.getDate() + '/' + (d.getMonth()+1) + '/' + d.getFullYear();
+			
+			cy.get('[id=textlodgmentDate]').type('{selectall}{backspace}' + lodgement_date_string);
+	
+			f2({
+				...tc,
+				lodgement_date_string:lodgement_date_string
+			})
+									
+		}
+
+	}
+}
+
+function f2(tc)
+{
+								
+	cy.contains('Show result').click();
+			
+	tc = {
+		...tc,
+		minimumYearRepaymentFormatted: cy.get('[data-bind="text: minimumYearRepaymentFormatted"]').innerText,
+		enquiryRateFormatted: cy.get('[data-bind="text: enquiryRateFormatted"]').innerText
+	}
+
+	cy.writeFile(new Date().toISOString() + Math.random() + '.json', tc);
+	
 }
 
 
