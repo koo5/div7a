@@ -31,7 +31,7 @@ describe('example to-do app', () => {
 			let term = 1;
 			for (term = 1; term < 8; term++)
 			{
-				cy.get('[id=textfullTermOfAmalgamatedLoan]').type('{selectall}{backspace}' + term);
+				cy.get('[id=textfullTermOfAmalgamatedLoan]').type('{selectall}{backspace}' + term,{delay: 0});
 
 				cy.get('[id=ddl-incomeYearOfEnquiring]').find('option').each(($el) => {
 					let incomeYearOfEnquiring_text = $el[0].innerText;
@@ -49,7 +49,7 @@ describe('example to-do app', () => {
 						
 						let amalgamatedLoanNotPaidByEOIY;
 						if (Math.random() < 0.5)
-							amalgamatedLoanNotPaidByEOIY = Math.floor(Math.random() * 123)
+							amalgamatedLoanNotPaidByEOIY = Math.floor(Math.random() * 12300)
 						else
 							amalgamatedLoanNotPaidByEOIY = Math.random() * 123000000
 						
@@ -58,7 +58,7 @@ describe('example to-do app', () => {
 							amalgamatedLoanNotPaidByEOIY:amalgamatedLoanNotPaidByEOIY
 						}
 
-						cy.get('[id=textamalgamatedLoanNotPaidByEOIY]').type('{selectall}{backspace}' + amalgamatedLoanNotPaidByEOIY);
+						cy.get('[id=textamalgamatedLoanNotPaidByEOIY]').type('{selectall}{backspace}' + amalgamatedLoanNotPaidByEOIY,{delay: 0});
 						cy.get('[id=vrb-calculateAmountOfTheAmalgamatedLoan-span-0]').click();
 
 						
@@ -74,13 +74,26 @@ describe('example to-do app', () => {
 						{
 							cy.get('[id="btn_repayment_add"]').click().then(() => 
 							{
-								let rd = '1/1/2020'
-								let ra = '100'
-								tc.repayments.push({rd,ra})
-								
-								cy.get('[id="textdateOfLoanRepaymentadd"]').type('{selectall}{backspace}' + rd);
-								cy.get('[id="textamountOfRepaymentadd"]').type('{selectall}{backspace}' + ra);
-								cy.get('[id="btn_repayment_save"]').click().then(f1(tc,incomeYearOfEnquiring_number,incomeYearOfLoan_number));
+							
+							
+								let remaining = amalgamatedLoanNotPaidByEOIY;
+								let min = new Date(incomeYearOfLoan_number,        7-1, 1);
+								let max = new Date(incomeYearOfEnquiring_number+2 ,6-1, 30);
+								let density = Math.floor(Math.random() * 1000);
+								for (var d = new Date(min); d <= max && remaining > 0; d.setDate(d.getDate() + Math.floor(Math.random() * density)))
+								{
+									let rd = d.getDate() + '/' + (d.getMonth()+1) + '/' + d.getFullYear();
+									let ra = Math.floor(Math.random() * 10000);
+									remaining -= ra;
+									if (remaining < 0)
+										ra += remaining;
+
+									tc.repayments.push({rd,ra})
+									
+									cy.get('[id="textdateOfLoanRepaymentadd"]').type('{selectall}{backspace}' + rd,{delay: 0});
+									cy.get('[id="textamountOfRepaymentadd"]').type('{selectall}{backspace}' + ra,{delay: 0});
+									cy.get('[id="btn_repayment_save"]').click().then(f1(tc,incomeYearOfEnquiring_number,incomeYearOfLoan_number));
+								}
 							}
 							);
 						}
@@ -111,7 +124,7 @@ function f1(tc,incomeYearOfEnquiring_number,incomeYearOfLoan_number)
 		{
 			let lodgement_date_string = d.getDate() + '/' + (d.getMonth()+1) + '/' + d.getFullYear();
 			
-			cy.get('[id=textlodgmentDate]').type('{selectall}{backspace}' + lodgement_date_string);
+			cy.get('[id=textlodgmentDate]').type('{selectall}{backspace}' + lodgement_date_string,{delay: 0});
 	
 			f2({
 				...tc,
