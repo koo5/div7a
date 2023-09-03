@@ -43,6 +43,7 @@ describe('example to-do app', () => {
 
 						tc = {
 							...tc,
+							fullTermOfAmalgamatedLoan: term,
 							incomeYearOfEnquiring:incomeYearOfEnquiring_number
 						}
 
@@ -140,7 +141,7 @@ function lodgement_f(tc, d)
 	})
 }
 
-function f2(tc)
+function f2(tc0)
 {
 	//cy.wait(100)
 	//cy.scrollTo('bottom', {ensureScrollable: false})
@@ -150,24 +151,27 @@ function f2(tc)
 	cy.contains('Show result').first().trigger('click')
 	//cy.wait(10000)
 	
-	tc = {
-		...tc,
-		minimumYearRepaymentFormatted: cy.get('[data-bind="text: minimumYearRepaymentFormatted"]').innerText,
-		enquiryRateFormatted: cy.get('[data-bind="text: enquiryRateFormatted"]').innerText,
-		enquiryYearEndMinusOneDisplay: cy.get('[data-bind="text: enquiryYearEndMinusOneDisplay"]').innerText,
-		amalgamatedLoanNotPaidByEOIYFormatted: cy.get('[data-bind="text: amalgamatedLoanNotPaidByEOIYFormatted"]').innerText,
-		openingBalancePayDays: cy.get('[data-bind="text: openingBalancePayDays"]').innerText,
-		openingBalanceInterestFormatted: cy.get('[data-bind="text: openingBalanceInterestFormatted"]').innerText,
-		totalAmountOfRepaymentFormatted: cy.get('[data-bind="text: totalAmountOfRepaymentFormatted"]').innerText,
-		totalInterestFormatted: cy.get('[data-bind="text: totalInterestFormatted"]').innerText,
-		principalFormatted: cy.get('[data-bind="text: principalFormatted"]').innerText,
-		enquiryYearEndDisplay: cy.get('[data-bind="text: enquiryYearEndDisplay"]').innerText,
-		loanAmountFormatted: cy.get('[data-bind="text: loanAmountFormatted"]').innerText,
-		alert: cy.get('.alert-attention').innerText,
+	let tc = {
+		...tc0,
+		id: new Date().toISOString() + Math.random()
 	}
-	tc['id'] = new Date().toISOString() + Math.random()
-
-	cy.writeFile('data/' + new Date().toISOString() + Math.random() + '.json', tc)
+	cy.get('.alert-attention').then(($el) => {tc['alert'] = $el[0].innerText});
+	db(tc,'enquiryRateFormatted')
+   	db(tc,'enquiryYearEndMinusOneDisplay')
+   	db(tc,'amalgamatedLoanNotPaidByEOIYFormatted')
+   	db(tc,'openingBalancePayDays')
+   	db(tc,'openingBalanceInterestFormatted')
+   	db(tc,'totalAmountOfRepaymentFormatted')
+   	db(tc,'totalInterestFormatted')
+   	db(tc,'principalFormatted')
+   	db(tc,'enquiryYearEndDisplay')
+   	db(tc,'minimumYearRepaymentFormatted')
+        	
+	cy.writeFile('data/' + tc.id + '.json', tc)
 	cy.writeFile('data/last.json', tc);
-	
+}
+
+function db(tc, k)
+{
+	cy.get('[data-bind="text: '+k+'"]').then(($el) => {tc[k] = $el[0].innerText});
 }
