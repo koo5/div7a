@@ -48,9 +48,9 @@ describe('example to-do app', () => {
 						
 						let amalgamatedLoanNotPaidByEOIY;
 						if (Math.random() < 0.5)
-							amalgamatedLoanNotPaidByEOIY = Math.floor(Math.random() * 12300)
+							amalgamatedLoanNotPaidByEOIY = 1+Math.floor(Math.random() * 12300)
 						else
-							amalgamatedLoanNotPaidByEOIY = Math.random() * 123000000
+							amalgamatedLoanNotPaidByEOIY = 1+Math.random() * 123
 						
 						cy.get('[id=textamalgamatedLoanNotPaidByEOIY]').type('{selectall}{backspace}' + amalgamatedLoanNotPaidByEOIY,{delay: 0});
 						cy.get('[id=vrb-calculateAmountOfTheAmalgamatedLoan-span-0]').click();
@@ -146,7 +146,7 @@ function f1(tc)
 		let max = new Date(tc.incomeYearOfLoan+1,6-1, 30);
 
 		var dates = [];
-		for (var d = new Date(min); d <= max; d.setDate(d.getDate() + 100))
+		for (var d = new Date(min); d <= max; d.setDate(d.getDate() + 1))
 			dates.push(new Date(d));
 		
 		cy.wrap(dates).each((d) =>

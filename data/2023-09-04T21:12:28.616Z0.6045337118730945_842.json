@@ -1,0 +1,43 @@
+{
+  "id": "2023-09-04T21:12:28.616Z0.6045337118730945",
+  "alert": "Start of result\nResult\n\nMinimum yearly repayment met.\n\nThe amount of the loan not repaid at the end of income year 2011-12 is $10.21.\n\nThe amalgamated loan will not be taken to be a dividend because the total repayments made are equal to or greater than the minimum yearly repayment required for income year 2011-12.\n\nInterest received by the private company must be included in the income tax return for 2011-12.\n\nMinimum yearly repayment\n\n$6,851.00\n\nBenchmark interest rate\n\n7.8%\n\nOpening balance:\n\nDate: 30/06/2011\n\nBalance: $12,251.00\n\nDays: 0\n\nInterest: $0\n\nPayments\n\nDate: 01/07/2011\n\nAmount: $2,808.00\n\nBalance: $9,443.00\n\nDays: 2\n\nInterest: $4.02\n\n\n\n\nDate: 03/07/2011\n\nAmount: $2,361.00\n\nBalance: $7,082.00\n\nDays: 3\n\nInterest: $4.53\n\n\n\n\nDate: 06/07/2011\n\nAmount: $4,479.00\n\nBalance: $2,603.00\n\nDays: 3\n\nInterest: $1.66\n\n\n\n\nDate: 09/07/2011\n\nAmount: $2,603.00\n\nBalance: $0\n\nDays: 358\n\nInterest: $0\n\n\n\n\nTotal repayments\n\n$12,251.00\n\nTotal interest\n\n$10.21\n\nTotal principal\n\n$12,240.79\n\nClosing balance\n\nDate: 30/06/2012\n\nBalance: $10.21",
+  "outputs": {
+    "enquiryRateFormatted": "7.8%",
+    "enquiryYearEndMinusOneDisplay": "30/06/2011",
+    "amalgamatedLoanNotPaidByEOIYFormatted": "$12,251.00",
+    "openingBalancePayDays": "0",
+    "openingBalanceInterestFormatted": "$0",
+    "totalAmountOfRepaymentFormatted": "$12,251.00",
+    "totalInterestFormatted": "$10.21",
+    "principalFormatted": "$12,240.79",
+    "enquiryYearEndDisplay": "30/06/2012",
+    "minimumYearRepaymentFormatted": "$6,851.00"
+  },
+  "repayments": [
+    {
+      "rd": "1/7/2011",
+      "ra": 2808
+    },
+    {
+      "rd": "3/7/2011",
+      "ra": 2361
+    },
+    {
+      "rd": "6/7/2011",
+      "ra": 4479
+    },
+    {
+      "rd": "9/7/2011",
+      "ra": 2603
+    }
+  ],
+  "inputs": {
+    "incomeYearOfLoan": 2008,
+    "fullTermOfAmalgamatedLoan": 5,
+    "incomeYearOfEnquiring": 2012,
+    "amalgamatedLoanNotPaidByEOIY": 12251,
+    "repayments": null,
+    "lodgement_date": null
+  },
+  "idx": 842
+}

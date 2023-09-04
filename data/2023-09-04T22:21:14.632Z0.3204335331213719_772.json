@@ -1,0 +1,35 @@
+{
+  "id": "2023-09-04T22:21:14.632Z0.3204335331213719",
+  "alert": "Start of result\nResult\n\nMinimum yearly repayment not met.\n\nThe amount of the loan not repaid at the end of income year 2000-01 is $55,355,944.33.\n\nThe private company may be taken to pay a dividend under Division 7A to the shareholder or shareholder's associate because the amount repaid during income year 2000-01 in relation to the amalgamated loan is less than the minimum yearly repayment required.\n\nInterest received by the private company must be included in the income tax return for 2000-01.\n\nMinimum yearly repayment\n\n$21,402,489.00\n\nBenchmark interest rate\n\n7.8%\n\nOpening balance:\n\nDate: 30/06/2000\n\nBalance: $55,355,944.33\n\nDays: 0\n\nInterest: $0\n\nPayments\n\nDate: 01/07/2000\n\nAmount: $764.00\n\nBalance: $55,355,180.33\n\nDays: 29\n\nInterest: $343,050.46\n\n\n\n\nDate: 30/07/2000\n\nAmount: $9,567.00\n\nBalance: $55,345,613.33\n\nDays: 336\n\nInterest: $3,973,966.67\n\n\n\n\nTotal repayments\n\n$10,331.00\n\nTotal interest\n\n$4,317,017.13\n\nTotal principal\n\n$0\n\nClosing balance\n\nDate: 30/06/2001\n\nBalance: $55,355,944.33",
+  "outputs": {
+    "enquiryRateFormatted": "7.8%",
+    "enquiryYearEndMinusOneDisplay": "30/06/2000",
+    "amalgamatedLoanNotPaidByEOIYFormatted": "$55,355,944.33",
+    "openingBalancePayDays": "0",
+    "openingBalanceInterestFormatted": "$0",
+    "totalAmountOfRepaymentFormatted": "$10,331.00",
+    "totalInterestFormatted": "$4,317,017.13",
+    "principalFormatted": "$0",
+    "enquiryYearEndDisplay": "30/06/2001",
+    "minimumYearRepaymentFormatted": "$21,402,489.00"
+  },
+  "repayments": [
+    {
+      "rd": "1/7/2000",
+      "ra": 764
+    },
+    {
+      "rd": "30/7/2000",
+      "ra": 9567
+    }
+  ],
+  "inputs": {
+    "incomeYearOfLoan": 2000,
+    "fullTermOfAmalgamatedLoan": 3,
+    "incomeYearOfEnquiring": 2001,
+    "amalgamatedLoanNotPaidByEOIY": 55355944.33949938,
+    "repayments": null,
+    "lodgement_date": "1/7/2000"
+  },
+  "idx": 772
+}

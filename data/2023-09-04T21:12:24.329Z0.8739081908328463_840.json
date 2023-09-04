@@ -1,0 +1,35 @@
+{
+  "id": "2023-09-04T21:12:24.329Z0.8739081908328463",
+  "alert": "Start of result\nResult\n\nMinimum yearly repayment not met.\n\nThe amount of the loan not repaid at the end of income year 2011-12 is $7,635.40.\n\nThe private company may be taken to pay a dividend under Division 7A to the shareholder or shareholder's associate because the amount repaid during income year 2011-12 in relation to the amalgamated loan is less than the minimum yearly repayment required.\n\nInterest received by the private company must be included in the income tax return for 2011-12.\n\nMinimum yearly repayment\n\n$6,851.00\n\nBenchmark interest rate\n\n7.8%\n\nOpening balance:\n\nDate: 30/06/2011\n\nBalance: $12,251.00\n\nDays: 0\n\nInterest: $0\n\nPayments\n\nDate: 01/07/2011\n\nAmount: $2,808.00\n\nBalance: $9,443.00\n\nDays: 2\n\nInterest: $4.02\n\n\n\n\nDate: 03/07/2011\n\nAmount: $2,361.00\n\nBalance: $7,082.00\n\nDays: 364\n\nInterest: $549.38\n\n\n\n\nTotal repayments\n\n$5,169.00\n\nTotal interest\n\n$553.40\n\nTotal principal\n\n$4,615.60\n\nClosing balance\n\nDate: 30/06/2012\n\nBalance: $7,635.40",
+  "outputs": {
+    "enquiryRateFormatted": "7.8%",
+    "enquiryYearEndMinusOneDisplay": "30/06/2011",
+    "amalgamatedLoanNotPaidByEOIYFormatted": "$12,251.00",
+    "openingBalancePayDays": "0",
+    "openingBalanceInterestFormatted": "$0",
+    "totalAmountOfRepaymentFormatted": "$5,169.00",
+    "totalInterestFormatted": "$553.40",
+    "principalFormatted": "$4,615.60",
+    "enquiryYearEndDisplay": "30/06/2012",
+    "minimumYearRepaymentFormatted": "$6,851.00"
+  },
+  "repayments": [
+    {
+      "rd": "1/7/2011",
+      "ra": 2808
+    },
+    {
+      "rd": "3/7/2011",
+      "ra": 2361
+    }
+  ],
+  "inputs": {
+    "incomeYearOfLoan": 2008,
+    "fullTermOfAmalgamatedLoan": 5,
+    "incomeYearOfEnquiring": 2012,
+    "amalgamatedLoanNotPaidByEOIY": 12251,
+    "repayments": null,
+    "lodgement_date": null
+  },
+  "idx": 840
+}
