@@ -1,0 +1,43 @@
+{
+  "id": "2023-09-04T16:33:54.891Z0.20199208447018635",
+  "alert": "Start of result\nResult\n\nMinimum yearly repayment met.\n\nThe amount of the loan not repaid at the end of income year 2017-18 is $62.42.\n\nThe amalgamated loan will not be taken to be a dividend because the total repayments made are equal to or greater than the minimum yearly repayment required for income year 2017-18.\n\nInterest received by the private company must be included in the income tax return for 2017-18.\n\nMinimum yearly repayment\n\n$0\n\nBenchmark interest rate\n\n5.3%\n\nOpening balance:\n\nDate: 30/06/2017\n\nBalance: $10,890.00\n\nDays: 0\n\nInterest: $0\n\nPayments\n\nDate: 01/07/2017\n\nAmount: $1,347.00\n\nBalance: $9,543.00\n\nDays: 40\n\nInterest: $55.43\n\n\n\n\nDate: 10/08/2017\n\nAmount: $6,990.00\n\nBalance: $2,553.00\n\nDays: 5\n\nInterest: $1.85\n\n\n\n\nDate: 15/08/2017\n\nAmount: $2,061.00\n\nBalance: $492.00\n\nDays: 72\n\nInterest: $5.14\n\n\n\n\nDate: 26/10/2017\n\nAmount: $492.00\n\nBalance: $0\n\nDays: 248\n\nInterest: $0\n\n\n\n\nTotal repayments\n\n$10,890.00\n\nTotal interest\n\n$62.42\n\nTotal principal\n\n$10,827.58\n\nClosing balance\n\nDate: 30/06/2018\n\nBalance: $62.42",
+  "outputs": {
+    "enquiryRateFormatted": "5.3%",
+    "enquiryYearEndMinusOneDisplay": "30/06/2017",
+    "amalgamatedLoanNotPaidByEOIYFormatted": "$10,890.00",
+    "openingBalancePayDays": "0",
+    "openingBalanceInterestFormatted": "$0",
+    "totalAmountOfRepaymentFormatted": "$10,890.00",
+    "totalInterestFormatted": "$62.42",
+    "principalFormatted": "$10,827.58",
+    "enquiryYearEndDisplay": "30/06/2018",
+    "minimumYearRepaymentFormatted": "$0"
+  },
+  "repayments": [
+    {
+      "rd": "1/7/2017",
+      "ra": 1347
+    },
+    {
+      "rd": "10/8/2017",
+      "ra": 6990
+    },
+    {
+      "rd": "15/8/2017",
+      "ra": 2061
+    },
+    {
+      "rd": "26/10/2017",
+      "ra": 492
+    }
+  ],
+  "inputs": {
+    "incomeYearOfLoan": 2017,
+    "fullTermOfAmalgamatedLoan": 2,
+    "incomeYearOfEnquiring": 2018,
+    "amalgamatedLoanNotPaidByEOIY": 10890,
+    "repayments": null,
+    "lodgement_date": "27/4/2018"
+  },
+  "idx": 771
+}
