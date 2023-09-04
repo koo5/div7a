@@ -1,0 +1,39 @@
+{
+  "id": "2023-09-04T16:42:54.519Z0.49850555948575725",
+  "alert": "Start of result\nResult\n\nMinimum yearly repayment met.\n\nThe amount of the loan not repaid at the end of income year 2017-18 is $185.36.\n\nThe amalgamated loan will not be taken to be a dividend because the total repayments made are equal to or greater than the minimum yearly repayment required for income year 2017-18.\n\nInterest received by the private company must be included in the income tax return for 2017-18.\n\nMinimum yearly repayment\n\n$6,124.00\n\nBenchmark interest rate\n\n5.3%\n\nOpening balance:\n\nDate: 30/06/2017\n\nBalance: $11,339.00\n\nDays: 0\n\nInterest: $0\n\nPayments\n\nDate: 01/07/2017\n\nAmount: $6,149.00\n\nBalance: $5,190.00\n\nDays: 206\n\nInterest: $155.24\n\n\n\n\nDate: 23/01/2018\n\nAmount: $2,935.00\n\nBalance: $2,255.00\n\nDays: 92\n\nInterest: $30.12\n\n\n\n\nDate: 25/04/2018\n\nAmount: $2,255.00\n\nBalance: $0\n\nDays: 67\n\nInterest: $0\n\n\n\n\nTotal repayments\n\n$11,339.00\n\nTotal interest\n\n$185.36\n\nTotal principal\n\n$11,153.64\n\nClosing balance\n\nDate: 30/06/2018\n\nBalance: $185.36",
+  "outputs": {
+    "enquiryRateFormatted": "5.3%",
+    "enquiryYearEndMinusOneDisplay": "30/06/2017",
+    "amalgamatedLoanNotPaidByEOIYFormatted": "$11,339.00",
+    "openingBalancePayDays": "0",
+    "openingBalanceInterestFormatted": "$0",
+    "totalAmountOfRepaymentFormatted": "$11,339.00",
+    "totalInterestFormatted": "$185.36",
+    "principalFormatted": "$11,153.64",
+    "enquiryYearEndDisplay": "30/06/2018",
+    "minimumYearRepaymentFormatted": "$6,124.00"
+  },
+  "repayments": [
+    {
+      "rd": "1/7/2017",
+      "ra": 6149
+    },
+    {
+      "rd": "23/1/2018",
+      "ra": 2935
+    },
+    {
+      "rd": "25/4/2018",
+      "ra": 2255
+    }
+  ],
+  "inputs": {
+    "incomeYearOfLoan": 2016,
+    "fullTermOfAmalgamatedLoan": 3,
+    "incomeYearOfEnquiring": 2018,
+    "amalgamatedLoanNotPaidByEOIY": 11339,
+    "repayments": null,
+    "lodgement_date": null
+  },
+  "idx": 1048
+}
