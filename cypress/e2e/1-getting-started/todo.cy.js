@@ -5,11 +5,14 @@ python3 -m pip install -U "watchdog[watchmedo]"
 watchmedo auto-restart -q -d data -- fish -c 'cd data; echo -e "\n\n\n"; tail -n 55555555 -f (ls -t . | head -1)'
 */
 
+var done;
+
 describe('example to-do app', () => {
   beforeEach(() => {
 	cy.visit('https://www.ato.gov.au/Calculators-and-tools/Host/?anchor=DIV7A#DIV7A/questions')
 	cy.viewport(1400, 1080)
 	idx = 0;
+	cy.readFile('done.json').then((d) => {done = d})
   })
 
   it('generate_testcase', () => {
@@ -32,10 +35,10 @@ describe('example to-do app', () => {
 			cy.wrap(termsArr).each((term) => 
 			{
 				cy.get('[id=textfullTermOfAmalgamatedLoan]').type('{selectall}{backspace}' + term,{delay: 0});
-
-				cy.get('[id=ddl-incomeYearOfEnquiring]').find('option').each(($el) => {
+				cy.get('[id=ddl-incomeYearOfEnquiring]').find('option').each(($el) => 
+				{
 					let incomeYearOfEnquiring_text = $el[0].innerText;
-					if (incomeYearOfEnquiring_text !== " - Select -")
+					if (incomeYearOfEnquiring_text !== " - Select -" && (done[incomeYearOfLoan_text + '_' + term + '_' + incomeYearOfEnquiring_text] != true))
 					{
 						let incomeYearOfEnquiring_number = Number(incomeYearOfEnquiring_text.substring(0, 4)) + 1
 
@@ -83,7 +86,9 @@ describe('example to-do app', () => {
 						{
 							cy.get('[id^="toggle_collapseMethod_repayment"]').first().click()
 							cy.get('[id="btn_repayment_delete"]').first().click()
-						});		
+							done[incomeYearOfLoan_text + '_' + term + '_' + incomeYearOfEnquiring_text] = true;
+							cy.writeFile('done.json', done)
+						});
 					}	
 				});
 			});
@@ -168,7 +173,7 @@ var idx = 0;
 
 function f2(tc0)
 {
-	cy.contains('Show result').first().trigger('click').then(() => {
+	cy.contains('Show result', {timeout:60000}).first().trigger('click').then(() => {
 	
 		let outputs = {}
 		let tc = {
@@ -180,7 +185,7 @@ function f2(tc0)
 			idx: idx++,
 		}
 
-		cy.wrap(db(outputs,'enquiryRateFormatted'), {log:true})
+		cy.wrap(db(outputs,'enquiryRateFormatted'), {log:true, timeout:60000})
 		cy.wrap(db(outputs,'enquiryYearEndMinusOneDisplay'), {log:true})
 		cy.wrap(db(outputs,'amalgamatedLoanNotPaidByEOIYFormatted'), {log:true})
 		cy.wrap(db(outputs,'openingBalancePayDays'), {log:true})
@@ -193,7 +198,7 @@ function f2(tc0)
 		
 		cy.get('.alert-attention').then(($el) => {tc['alert'] = $el[0].innerText})
 	
-		cy.writeFile('data/' + tc.idx + '_' + tc.id + '.json', tc)
+		cy.writeFile('data/' + tc.id + '_' + tc.idx + '.json', tc)
 	})
 }
 
