@@ -38,7 +38,8 @@ describe('example to-do app', () => {
 				cy.get('[id=ddl-incomeYearOfEnquiring]').find('option').each(($el) => 
 				{
 					let incomeYearOfEnquiring_text = $el[0].innerText;
-					if (incomeYearOfEnquiring_text !== " - Select -" && (done[incomeYearOfLoan_text + '_' + term + '_' + incomeYearOfEnquiring_text] != true))
+					let donekey = incomeYearOfLoan_text + '_' + term + '_' + incomeYearOfEnquiring_text;
+					if (incomeYearOfEnquiring_text !== " - Select -" && (done[donekey] != true))
 					{
 						let incomeYearOfEnquiring_number = Number(incomeYearOfEnquiring_text.substring(0, 4)) + 1
 
@@ -86,7 +87,7 @@ describe('example to-do app', () => {
 						{
 							cy.get('[id^="toggle_collapseMethod_repayment"]').first().click()
 							cy.get('[id="btn_repayment_delete"]').first().click()
-							done[incomeYearOfLoan_text + '_' + term + '_' + incomeYearOfEnquiring_text] = true;
+							done[donekey] = true;
 							cy.writeFile('done.json', done)
 						});
 					}	
