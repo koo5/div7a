@@ -15,9 +15,14 @@ tweak the repayments starting date and lodgement date step as desired, manually,
 
 the calculator does not let us enter invalid inputs, and i believe i have covered all legal inputs here (except an infinite number of repayments, for example), so, a testing script can try all min-1, max+1 etc inputs, to verify that they fail in our calc too, and if anything succeeds in our calculator, we can compare it with the ato to see what's up.
 
-cypress is a b*tch. Read the docs on asynchronicity and yielding and variables and whatnot, and see the examples, first. You still won't make sense of it. I proobably maybe possibly who-knows have some unnecessary cy.wrap calls, but, it works, so, whatever.
+cypress is a b*tch. Read the docs on asynchronicity and yielding and variables and whatnot, and see the examples, first. You still won't make sense of it. 
+I proobably possibly have some unnecessary cy.wrap calls, and some strange ways to do things here, but, it works, so, whatever.
 
-Except the browser crashes. You get crashes in chrome and in firefox too. 
+Except the browser crashes. You get crashes in chrome and in firefox too. Oh and you maybe need to install firefox from repo, not the snap one.
+
+>>>I have no idea how to debug this. I have no idea how to debug anything in cypress. I have no idea how to debug anything in javascript. I have no idea how to debug anything in nodejs. I have no idea how to debug anything in python. I have no idea how to debug anything in any langu<<< copilot said that.
+
+
 
 */
 
