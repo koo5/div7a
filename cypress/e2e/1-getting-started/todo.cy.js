@@ -11,9 +11,11 @@ add a command to write out a last.json, but then if you open it, cypress will er
 
 see diffz.py and diffy.py for comparing pairs of results.
 
-tweak the repayments starting date and lodgement date step as desired, manually. 
+tweak the repayments starting date and lodgement date step as desired, manually, here. 
 
-the calculator does not let us enter invalid inputs, and i believe i have covered all legal inputs here, so, a testing script can try all min-1, max+1 etc inputs, to verify that they fail in our calc too, and if anything succeeds in our calculator, we can compare it with the ato.
+the calculator does not let us enter invalid inputs, and i believe i have covered all legal inputs here (except an infinite number of repayments, for example), so, a testing script can try all min-1, max+1 etc inputs, to verify that they fail in our calc too, and if anything succeeds in our calculator, we can compare it with the ato to see what's up.
+
+cypress is a b*tch. 
 
 */
 
