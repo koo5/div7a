@@ -18,6 +18,8 @@ the calculator does not let us enter invalid inputs, and i believe i have covere
 cypress is a b*tch. Read the docs on asynchronicity and yielding and variables and whatnot, and see the examples, first. You still won't make sense of it. 
 I proobably possibly have some unnecessary cy.wrap calls, and some strange ways to do things here, but, it works, so, whatever.
 
+The logic around adding repayments is tricky, because we want to run the calc after each repayment added, to save time, rather than clear them out every time.
+
 Except the browser crashes. You get crashes in chrome and in firefox too. Oh and you maybe need to install firefox from repo, not the snap one.
 
 >>>I have no idea how to debug this. I have no idea how to debug anything in cypress. I have no idea how to debug anything in javascript. I have no idea how to debug anything in nodejs. I have no idea how to debug anything in python. I have no idea how to debug anything in any langu<<< copilot said that.
@@ -96,7 +98,7 @@ describe('example to-do app', () => {
 								cy.get('[id="textdateOfLoanRepaymentadd"]').type('{selectall}{backspace}' + r.rd,{delay: 0});
 								cy.get('[id="textamountOfRepaymentadd"]').type('{selectall}{backspace}' + r.ra,{delay: 0});
 								cy.get('[id="btn_repayment_save"]').click()
-								cy.wait(200)
+								cy.wait(200) 
 							}
 							cy.wrap(f1({
 								...tc,
