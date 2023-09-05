@@ -3,7 +3,8 @@
 /*
 
 
-python3 -m pip install -U "watchdog[watchmedo]"
+python3 -m pip install -U "watchdog[watchmedo] natsort"
+
 watchmedo auto-restart -q -d data -- fish -c 'cd data; echo -e "\n\n\n"; tail -n 55555555 -f (ls -t . | head -1)'
 watchmedo is flaky (inotify api, probably), so, there isnt really a good way to watch the results in real time, you can
 add a command to write out a last.json, but then if you open it, cypress will error out trying to write to it.
@@ -13,9 +14,6 @@ see diffz.py and diffy.py for comparing pairs of results.
 tweak the repayments starting date and lodgement date step as desired, manually. 
 
 the calculator does not let us enter invalid inputs, and i believe i have covered all legal inputs here, so, a testing script can try all min-1, max+1 etc inputs, to verify that they fail in our calc too, and if anything succeeds in our calculator, we can compare it with the ato.
-
-
- 
 
 */
 
