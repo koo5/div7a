@@ -1,0 +1,39 @@
+{
+  "id": "2023-09-05T21:00:28.923Z0.6090275156534493",
+  "alert": "Start of result\nResult\n\nMinimum yearly repayment met.\n\nThe amount of the loan not repaid at the end of income year 2017-18 is $160.28.\n\nThe amalgamated loan will not be taken to be a dividend because the total repayments made are equal to or greater than the minimum yearly repayment required for income year 2017-18.\n\nInterest received by the private company must be included in the income tax return for 2017-18.\n\nMinimum yearly repayment\n\n$961.00\n\nBenchmark interest rate\n\n5.3%\n\nOpening balance:\n\nDate: 30/06/2017\n\nBalance: $8,540.00\n\nDays: 50\n\nInterest: $62.00\n\nPayments\n\nDate: 20/08/2017\n\nAmount: $1,785.00\n\nBalance: $6,755.00\n\nDays: 9\n\nInterest: $8.83\n\n\n\n\nDate: 29/08/2017\n\nAmount: $1,255.00\n\nBalance: $5,500.00\n\nDays: 112\n\nInterest: $89.45\n\n\n\n\nDate: 19/12/2017\n\nAmount: $5,500.00\n\nBalance: $0\n\nDays: 194\n\nInterest: $0\n\n\n\n\nTotal repayments\n\n$8,540.00\n\nTotal interest\n\n$160.28\n\nTotal principal\n\n$8,379.72\n\nClosing balance\n\nDate: 30/06/2018\n\nBalance: $160.28",
+  "outputs": {
+    "enquiryRateFormatted": "5.3%",
+    "enquiryYearEndMinusOneDisplay": "30/06/2017",
+    "amalgamatedLoanNotPaidByEOIYFormatted": "$8,540.00",
+    "openingBalancePayDays": "50",
+    "openingBalanceInterestFormatted": "$62.00",
+    "totalAmountOfRepaymentFormatted": "$8,540.00",
+    "totalInterestFormatted": "$160.28",
+    "principalFormatted": "$8,379.72",
+    "enquiryYearEndDisplay": "30/06/2018",
+    "minimumYearRepaymentFormatted": "$961.00"
+  },
+  "repayments": [
+    {
+      "rd": "20/8/2017",
+      "ra": 1785
+    },
+    {
+      "rd": "29/8/2017",
+      "ra": 1255
+    },
+    {
+      "rd": "19/12/2017",
+      "ra": 5500
+    }
+  ],
+  "inputs": {
+    "incomeYearOfLoan": 2017,
+    "fullTermOfAmalgamatedLoan": 7,
+    "incomeYearOfEnquiring": 2018,
+    "amalgamatedLoanNotPaidByEOIY": 8540,
+    "repayments": null,
+    "lodgement_date": "21/11/2017"
+  },
+  "idx": 7885
+}
