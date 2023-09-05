@@ -24,8 +24,12 @@ Except the browser crashes. You get crashes in chrome and in firefox too. Oh and
 
 >>>I have no idea how to debug this. I have no idea how to debug anything in cypress. I have no idea how to debug anything in javascript. I have no idea how to debug anything in nodejs. I have no idea how to debug anything in python. I have no idea how to debug anything in any langu<<< copilot said that.
 
-if you get: Error: Cannot find module 'fs/promises'
-you're f*cked, i don't know how to fix that.
+if you get: Error: Cannot find module 'fs/promises', remember to 'nvm use 16' or something like that.
+
+>>
+nvm use 16
+while true; npx cypress run --no-runner-ui; ga data; gcam ..; gp; sleep 100; end;
+<<
 
 
 */
