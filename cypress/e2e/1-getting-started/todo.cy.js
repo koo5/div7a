@@ -112,6 +112,10 @@ function random_repayment_list(amalgamatedLoanNotPaidByEOIY, incomeYearOfEnquiri
 	let repayments = [];
 	let remaining = amalgamatedLoanNotPaidByEOIY;
 	let min = new Date(incomeYearOfEnquiring_number-1 ,7-1, 1);
+	
+	//uncomment for repayments starting from 1/7 of year 1
+	min.setDate(d.getDate() + Math.floor(Math.random() * 900))
+	
 	let max = new Date(incomeYearOfEnquiring_number   ,6-1, 30);
 	let sparsity = Math.floor(Math.random() * 1000);
 	let start = new Date(min);
