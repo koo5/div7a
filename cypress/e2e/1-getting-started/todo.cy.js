@@ -3,6 +3,7 @@
 /*
 python3 -m pip install -U "watchdog[watchmedo]"
 watchmedo auto-restart -q -d data -- fish -c 'cd data; echo -e "\n\n\n"; tail -n 55555555 -f (ls -t . | head -1)'
+watchmedo is flaky (inotify api, probably), so, there isnt really a good way to watch the results in real time, you ca
 */
 
 var done;
