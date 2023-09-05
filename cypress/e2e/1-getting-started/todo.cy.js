@@ -1,9 +1,17 @@
 /// <reference types="cypress" />
 
 /*
+
+
 python3 -m pip install -U "watchdog[watchmedo]"
 watchmedo auto-restart -q -d data -- fish -c 'cd data; echo -e "\n\n\n"; tail -n 55555555 -f (ls -t . | head -1)'
-watchmedo is flaky (inotify api, probably), so, there isnt really a good way to watch the results in real time, you ca
+watchmedo is flaky (inotify api, probably), so, there isnt really a good way to watch the results in real time, you can
+add a command to write out a last.json, but then if you open it, cypress will error out trying to write to it.
+
+see diffz.py and diffy.py for comparing pairs of results.
+
+tweak the repayments starting
+
 */
 
 var done;
@@ -151,7 +159,7 @@ function f1(tc)
 		let max = new Date(tc.incomeYearOfLoan+1,6-1, 30);
 
 		var dates = [];
-		for (var d = new Date(min); d <= max; d.setDate(d.getDate() + 1))
+		for (var d = new Date(min); d <= max; d.setDate(d.getDate() + 1)) //lodgement day step
 			dates.push(new Date(d));
 		
 		cy.wrap(dates).each((d) =>
