@@ -16,7 +16,7 @@ tweak the repayments starting date and lodgement date step as desired, manually,
 the calculator does not let us enter invalid inputs, and i believe i have covered all legal inputs here (except an infinite number of repayments, for example), so, a testing script can try all min-1, max+1 etc inputs, to verify that they fail in our calc too, and if anything succeeds in our calculator, we can compare it with the ato to see what's up.
 
 cypress is a b*tch. Read the docs on asynchronicity and yielding and variables and whatnot, and see the examples, first. You still won't make sense of it. 
-I proobably possibly have some unnecessary cy.wrap calls, and some strange ways to do things here, but, it works, so, whatever.
+I proobably possibly have some unnecessary cy.wrap calls, and some strange ways to do things here, but, it works, so, whatever. Still don't know if the `cy.wrap(db`... calls are legal/correct/needed with cypress, but it seems to work. Still dont understand how the (async stuff) sequencing works.
 
 The logic around adding repayments is tricky, because we want to run the calc after each repayment added, to save time, rather than clear them out every time.
 
@@ -229,6 +229,7 @@ function f2(tc0)
 		cy.writeFile('data/' + tc.id + '_' + tc.idx + '.json', tc)
 	})
 }
+
 
 function db(tc, k)
 {
