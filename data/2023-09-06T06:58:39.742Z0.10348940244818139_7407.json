@@ -1,0 +1,35 @@
+{
+  "id": "2023-09-06T06:58:39.742Z0.10348940244818139",
+  "alert": "Start of result\nResult\n\nMinimum yearly repayment not met.\n\nThe amount of the loan not repaid at the end of income year 2017-18 is $5,008.28.\n\nThe private company may be taken to pay a dividend under Division 7A to the shareholder or shareholder's associate because the amount repaid during income year 2017-18 in relation to the amalgamated loan is less than the minimum yearly repayment required.\n\nInterest received by the private company must be included in the income tax return for 2017-18.\n\nMinimum yearly repayment\n\n$10,832.00\n\nBenchmark interest rate\n\n5.3%\n\nOpening balance:\n\nDate: 30/06/2017\n\nBalance: $10,287.00\n\nDays: 140\n\nInterest: $209.12\n\nPayments\n\nDate: 18/11/2017\n\nAmount: $198.00\n\nBalance: $10,089.00\n\nDays: 130\n\nInterest: $190.45\n\n\n\n\nDate: 28/03/2018\n\nAmount: $5,543.00\n\nBalance: $4,546.00\n\nDays: 95\n\nInterest: $62.71\n\n\n\n\nTotal repayments\n\n$5,741.00\n\nTotal interest\n\n$462.28\n\nTotal principal\n\n$5,278.72\n\nClosing balance\n\nDate: 30/06/2018\n\nBalance: $5,008.28",
+  "outputs": {
+    "enquiryRateFormatted": "5.3%",
+    "enquiryYearEndMinusOneDisplay": "30/06/2017",
+    "amalgamatedLoanNotPaidByEOIYFormatted": "$10,287.00",
+    "openingBalancePayDays": "140",
+    "openingBalanceInterestFormatted": "$209.12",
+    "totalAmountOfRepaymentFormatted": "$5,741.00",
+    "totalInterestFormatted": "$462.28",
+    "principalFormatted": "$5,278.72",
+    "enquiryYearEndDisplay": "30/06/2018",
+    "minimumYearRepaymentFormatted": "$10,832.00"
+  },
+  "repayments": [
+    {
+      "rd": "18/11/2017",
+      "ra": 198
+    },
+    {
+      "rd": "28/3/2018",
+      "ra": 5543
+    }
+  ],
+  "inputs": {
+    "incomeYearOfLoan": 2011,
+    "fullTermOfAmalgamatedLoan": 7,
+    "incomeYearOfEnquiring": 2018,
+    "amalgamatedLoanNotPaidByEOIY": 10287,
+    "repayments": null,
+    "lodgement_date": null
+  },
+  "idx": 7407
+}
