@@ -1,0 +1,31 @@
+{
+  "id": "2023-09-07T02:01:24.269Z0.6154111962419053",
+  "alert": "Start of result\nResult\n\nMinimum yearly repayment met.\n\nThe amount of the loan not repaid at the end of income year 1999-00 is $0.38.\n\nThe amalgamated loan will not be taken to be a dividend because the total repayments made are equal to or greater than the minimum yearly repayment required for income year 1999-00.\n\nInterest received by the private company must be included in the income tax return for 1999-00.\n\nMinimum yearly repayment\n\n$3.00\n\nBenchmark interest rate\n\n6.5%\n\nOpening balance:\n\nDate: 30/06/1999\n\nBalance: $11.93\n\nDays: 178\n\nInterest: $0.38\n\nPayments\n\nDate: 26/12/1999\n\nAmount: $11.93\n\nBalance: $0\n\nDays: 188\n\nInterest: $0\n\n\n\n\nTotal repayments\n\n$11.93\n\nTotal interest\n\n$0.38\n\nTotal principal\n\n$11.55\n\nClosing balance\n\nDate: 30/06/2000\n\nBalance: $0.38",
+  "outputs": {
+    "enquiryRateFormatted": "6.5%",
+    "enquiryYearEndMinusOneDisplay": "30/06/1999",
+    "amalgamatedLoanNotPaidByEOIYFormatted": "$11.93",
+    "openingBalancePayDays": "178",
+    "openingBalanceInterestFormatted": "$0.38",
+    "totalAmountOfRepaymentFormatted": "$11.93",
+    "totalInterestFormatted": "$0.38",
+    "principalFormatted": "$11.55",
+    "enquiryYearEndDisplay": "30/06/2000",
+    "minimumYearRepaymentFormatted": "$3.00"
+  },
+  "repayments": [
+    {
+      "rd": "26/12/1999",
+      "ra": 11.932647222164633
+    }
+  ],
+  "inputs": {
+    "incomeYearOfLoan": 1999,
+    "fullTermOfAmalgamatedLoan": 4,
+    "incomeYearOfEnquiring": 2000,
+    "amalgamatedLoanNotPaidByEOIY": 11.932647222164242,
+    "repayments": null,
+    "lodgement_date": "23/10/1999"
+  },
+  "idx": 3429
+}
