@@ -28,7 +28,7 @@ if __name__ == '__main__':
 
 		id = j['id']
 
-		case_dir = P(f'../endpoint_tests/loan/good_calc_autogen/{id}')
+		case_dir = P(f'endpoint_tests/loan/good_calc_autogen/{id}')
 		case_dir.mkdir(parents=True)
 
 		inputs_dir = case_dir / 'request'
@@ -36,6 +36,10 @@ if __name__ == '__main__':
 
 		outputs_dir = case_dir/ 'responses'
 		outputs_dir.mkdir(parents=True)
+
+		response_fn = case_dir / 'response.json'
+		with open(response_fn, 'w') as f:
+			json.dump(200, f)
 
 		income_year_of_computation = j['inputs']['incomeYearOfEnquiring']
 		opening_balance = j['inputs']['amalgamatedLoanNotPaidByEOIY']
@@ -91,15 +95,16 @@ if __name__ == '__main__':
 			totalAmountOfRepayment = ato_monetary_to_float_str(j['outputs']['totalAmountOfRepaymentFormatted'])
 			minimumYearRepayment   = ato_monetary_to_float_str(j['outputs']['minimumYearRepaymentFormatted'])
 			
-			shortfall = min(0, float(minimumYearRepayment) - float(totalAmountOfRepaymentFormatted))
+			shortfall = max(0, float(minimumYearRepayment) - float(totalAmountOfRepayment))
 
 			# i forgot to take closing balance. But we can parse it from alert.
-			enquiryYearEndDisplay = j['outputs']['minimumYearRepaymentFormatted']
+			enquiryYearEndDisplay = j['outputs']['enquiryYearEndDisplay']
 			xxx = j['alert'].split('$')
 			
 			ClosingBalance = xxx[-1]
-			if not xxx[-2].endswith("""\n\nClosing balance\n\nDate: {enquiryYearEndDisplay}\n\nBalance: ${ClosingBalance}"""):
-				raise Exception('unexpected alert format')
+			expected = f"""\n\nClosing balance\n\nDate: {enquiryYearEndDisplay}\n\nBalance: ${ClosingBalance}"""
+			if not j['alert'].endswith(expected):
+				raise Exception(f"""unexpected alert format, expected: {expected}, got: {j['alert']}""")
 			
 			add('IncomeYear'		, income_year_of_computation)
 			add('OpeningBalance'	, opening_balance)
@@ -114,6 +119,7 @@ if __name__ == '__main__':
 			with open(response_fn, 'w') as f:
 				f.write(doc.toprettyxml(indent='\t'))
 
-	
+		write_response_xml()
+		
 		
 	print('done')

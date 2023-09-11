@@ -229,6 +229,7 @@ function f2(tc0)
 		cy.wrap(db(outputs,'principalFormatted'), {log:true})
 		cy.wrap(db(outputs,'enquiryYearEndDisplay'), {log:true})
 		cy.wrap(db(outputs,'minimumYearRepaymentFormatted'), {log:true})
+		cy.wrap(db(outputs,'closingBalance'), {log:true})
 		
 		cy.get('.alert-attention').then(($el) => {tc['alert'] = $el[0].innerText})
 	
