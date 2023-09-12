@@ -3,14 +3,23 @@ import itertools
 from xml.dom import minidom
 from xml.dom.minidom import getDOMImplementation
 impl = getDOMImplementation()
-import json,os
+import json,os,sys
 from pathlib import Path as P
 from joblib import Parallel, delayed
 
 
 def ato_date_to_xml(date):
-	d = date.split('/') # dmy
-	return f'{d[2]}-{d[1]}-{d[0]}' # ymd
+	items = date.split('/') # dmy
+	y = int(items[2])
+	m = int(items[1])
+	d = int(items[0])
+	if not (0 < m <= 12):
+		raise Exception(f'invalid month: {m}')
+	if not (0 < d <= 31):
+		raise Exception(f'invalid day: {d}')
+	if not (1980 < y <= 2050):
+		raise Exception(f'invalid year: {y}')
+	return f'{y}-{m:02}-{d:02}' # ymd
 
 def ato_monetary_to_float_str(s):
 	return s.replace('$', '').replace(',', '')
@@ -23,18 +32,20 @@ cases_dir = P(f'../endpoint_tests/loan/good_atocalc_autogen/')
 
 
 def rmrf():
-	os.system(f'rm -rf {cases_dir}.old')
+	#os.system(f'rm -rf {cases_dir}.old')
+	pass
 
 
 def run():
-	os.system(f'mv {cases_dir} {cases_dir}.old')
-	with Parallel(n_jobs=200) as parallel:
+	#os.system(f'mv {cases_dir} {cases_dir}.old')
+	with Parallel(n_jobs=25) as parallel:
 		parallel(itertools.chain([delayed(rmrf)()], [delayed(process_testcase)(f) for f in P('../data/').glob('*.json')]))
 	print('done')
 
 
 def process_testcase(f):
-		#print(f)
+		print(f)
+		#sys.stdout.write('.')
 
 		with open(f, 'r') as f:
 			j = json.load(f)
@@ -65,7 +76,7 @@ def process_testcase(f):
 			loan = doc.documentElement.appendChild(doc.createElement('loanDetails'))
 			
 			agreement = loan.appendChild(doc.createElement('loanAgreement'))
-			repayments = loan.appendChild(doc.createElement('loanAgreement'))
+			repayments = loan.appendChild(doc.createElement('repayments'))
 	
 			def field(name, value):
 				field = agreement.appendChild(doc.createElement('field'))
@@ -87,7 +98,7 @@ def process_testcase(f):
 			for r in j['repayments']:
 				repayment = repayments.appendChild(doc.createElement('repayment'))
 				repayment.setAttribute('date', ato_date_to_xml(r['rd']))
-				repayment.setAttribute('amount', str(r['ra']))
+				repayment.setAttribute('value', str(r['ra']))
 				
 			with open(request_fn, 'w') as f:
 				f.write(doc.toprettyxml(indent='\t'))
