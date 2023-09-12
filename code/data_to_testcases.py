@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
-
+import itertools
 from xml.dom import minidom
 from xml.dom.minidom import getDOMImplementation
 impl = getDOMImplementation()
-import json
+import json,os
 from pathlib import Path as P
-
+from joblib import Parallel, delayed
 
 
 def ato_date_to_xml(date):
@@ -16,19 +16,32 @@ def ato_monetary_to_float_str(s):
 	return s.replace('$', '').replace(',', '')
 
 
-print( __name__)
 
-if __name__ == '__main__':
-	
-	for f in P('data/').glob('*.json'):
-		print(f)
+
+
+cases_dir = P(f'../endpoint_tests/loan/good_atocalc_autogen/')
+
+
+def rmrf():
+	os.system(f'rm -rf {cases_dir}.old')
+
+
+def run():
+	os.system(f'mv {cases_dir} {cases_dir}.old')
+	with Parallel(n_jobs=200) as parallel:
+		parallel(itertools.chain([delayed(rmrf)()], [delayed(process_testcase)(f) for f in P('../data/').glob('*.json')]))
+	print('done')
+
+
+def process_testcase(f):
+		#print(f)
 
 		with open(f, 'r') as f:
 			j = json.load(f)
 
 		id = j['id']
 
-		case_dir = P(f'endpoint_tests/loan/good_calc_autogen/{id}')
+		case_dir = P(f'{cases_dir}/{id}')
 		case_dir.mkdir(parents=True)
 
 		inputs_dir = case_dir / 'request'
@@ -39,7 +52,7 @@ if __name__ == '__main__':
 
 		response_fn = case_dir / 'response.json'
 		with open(response_fn, 'w') as f:
-			json.dump(200, f)
+			json.dump({"status":200,"result":'responses/response.xml'}, f)
 
 		income_year_of_computation = j['inputs']['incomeYearOfEnquiring']
 		opening_balance = j['inputs']['amalgamatedLoanNotPaidByEOIY']
@@ -120,6 +133,6 @@ if __name__ == '__main__':
 				f.write(doc.toprettyxml(indent='\t'))
 
 		write_response_xml()
-		
-		
-	print('done')
+
+if __name__ == '__main__':
+	run()
