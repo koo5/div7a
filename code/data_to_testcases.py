@@ -108,9 +108,12 @@ def process_testcase(f):
 		
 		def write_response_xml():
 			response_fn = outputs_dir / 'response.xml'
-
+			
 			doc = impl.createDocument(None, "LoanSummary", None)
 			root = doc.documentElement
+			root.setAttribute('xmlns:xsd', "http://www.w3.org/2001/XMLSchema")
+			root.setAttribute('xmlns:xsi', "http://www.w3.org/2001/XMLSchema-instance")
+			root.setAttribute('xsi:schemaLocation', "loan_response.xsd")
 			
 			def add(name, value):
 				e = root.appendChild(doc.createElement(name))
@@ -141,7 +144,7 @@ def process_testcase(f):
 			add('ClosingBalance'	, ato_monetary_to_float_str(ClosingBalance))
 
 			with open(response_fn, 'w') as f:
-				f.write(doc.toprettyxml(indent='\t'))
+				f.write(doc.toprettyxml(indent=''))
 
 		write_response_xml()
 
