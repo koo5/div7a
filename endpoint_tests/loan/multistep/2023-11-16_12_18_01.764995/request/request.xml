@@ -1,0 +1,189 @@
+<?xml version="1.0" ?>
+<reports>
+	<loanDetails>
+		<loanAgreement>
+			<field name="Income year of loan creation" value="2017"/>
+			<field name="Full term of loan in years" value="4"/>
+			<field name="Lodgement day of private company" value="2018-04-14"/>
+			<field name="Income year of computation" value="2021"/>
+			<field name="Principal amount of loan" value="107193"/>
+		</loanAgreement>
+		<repayments>
+			<repayment date="2017-07-03" value="10716"/>
+			<repayment date="2017-09-07" value="17665"/>
+			<repayment date="2018-08-12" value="30088"/>
+			<repayment date="2018-12-08" value="15286"/>
+			<repayment date="2019-12-31" value="35388"/>
+			<repayment date="2020-11-04" value="15472"/>
+			<repayment date="2021-04-12" value="36573"/>
+			<repayment date="2021-08-05" value="10660"/>
+		</repayments>
+	</loanDetails>
+</reports>
+<!--
+
+
+<?xml version="1.0" ?>
+<reports>
+	<loanDetails>
+		<loanAgreement>
+			<field name="Income year of loan creation" value="2017"/>
+			<field name="Full term of loan in years" value="4"/>
+			<field name="Lodgement day of private company" value="2018-04-14"/>
+			<field name="Income year of computation" value="2018"/>
+			<field name="Opening balance of computation" value="107193"/>
+		</loanAgreement>
+		<repayments>
+			<repayment date="2017-07-03" value="10716"/>
+			<repayment date="2017-09-07" value="17665"/>
+			<repayment date="2018-08-12" value="30088"/>
+			<repayment date="2018-12-08" value="15286"/>
+			<repayment date="2019-12-31" value="35388"/>
+			<repayment date="2020-11-04" value="15472"/>
+			<repayment date="2021-04-12" value="36573"/>
+			<repayment date="2021-08-05" value="10660"/>
+		</repayments>
+	</loanDetails>
+</reports>
+
+
+
+<?xml version="1.0" ?>
+<LoanSummary xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="loan_response.xsd">
+<IncomeYear>2018</IncomeYear>
+<OpeningBalance>107193.00000000</OpeningBalance>
+<InterestRate>5.30000000</InterestRate>
+<MinYearlyRepayment>22381.00775097</MinYearlyRepayment>
+<TotalRepayment>28381.00000000</TotalRepayment>
+<RepaymentShortfall>0.00000000</RepaymentShortfall>
+<TotalInterest>4354.57176986</TotalInterest>
+<TotalPrincipal>24026.42823014</TotalPrincipal>
+<ClosingBalance>83166.57176986</ClosingBalance>
+</LoanSummary>
+
+
+
+<?xml version="1.0" ?>
+<reports>
+	<loanDetails>
+		<loanAgreement>
+			<field name="Income year of loan creation" value="2017"/>
+			<field name="Full term of loan in years" value="4"/>
+			<field name="Lodgement day of private company" value="2018-04-14"/>
+			<field name="Income year of computation" value="2019"/>
+			<field name="Opening balance of computation" value="83166.57176986"/>
+		</loanAgreement>
+		<repayments>
+			<repayment date="2017-07-03" value="10716"/>
+			<repayment date="2017-09-07" value="17665"/>
+			<repayment date="2018-08-12" value="30088"/>
+			<repayment date="2018-12-08" value="15286"/>
+			<repayment date="2019-12-31" value="35388"/>
+			<repayment date="2020-11-04" value="15472"/>
+			<repayment date="2021-04-12" value="36573"/>
+			<repayment date="2021-08-05" value="10660"/>
+		</repayments>
+	</loanDetails>
+</reports>
+
+
+
+<?xml version="1.0" ?>
+<LoanSummary xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="loan_response.xsd">
+<IncomeYear>2019</IncomeYear>
+<OpeningBalance>83166.57176986</OpeningBalance>
+<InterestRate>5.20000000</InterestRate>
+<MinYearlyRepayment>30653.99546190</MinYearlyRepayment>
+<TotalRepayment>45374.00000000</TotalRepayment>
+<RepaymentShortfall>0.00000000</RepaymentShortfall>
+<TotalInterest>2493.68417587</TotalInterest>
+<TotalPrincipal>42880.31582413</TotalPrincipal>
+<ClosingBalance>40286.25594573</ClosingBalance>
+</LoanSummary>
+
+
+
+<?xml version="1.0" ?>
+<reports>
+	<loanDetails>
+		<loanAgreement>
+			<field name="Income year of loan creation" value="2017"/>
+			<field name="Full term of loan in years" value="4"/>
+			<field name="Lodgement day of private company" value="2018-04-14"/>
+			<field name="Income year of computation" value="2020"/>
+			<field name="Opening balance of computation" value="40286.25594573"/>
+		</loanAgreement>
+		<repayments>
+			<repayment date="2017-07-03" value="10716"/>
+			<repayment date="2017-09-07" value="17665"/>
+			<repayment date="2018-08-12" value="30088"/>
+			<repayment date="2018-12-08" value="15286"/>
+			<repayment date="2019-12-31" value="35388"/>
+			<repayment date="2020-11-04" value="15472"/>
+			<repayment date="2021-04-12" value="36573"/>
+			<repayment date="2021-08-05" value="10660"/>
+		</repayments>
+	</loanDetails>
+</reports>
+
+
+
+<?xml version="1.0" ?>
+<LoanSummary xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="loan_response.xsd">
+<IncomeYear>2020</IncomeYear>
+<OpeningBalance>40286.25594573</OpeningBalance>
+<InterestRate>5.37000000</InterestRate>
+<MinYearlyRepayment>21779.79885461</MinYearlyRepayment>
+<TotalRepayment>35388.00000000</TotalRepayment>
+<RepaymentShortfall>0.00000000</RepaymentShortfall>
+<TotalInterest>1213.20414429</TotalInterest>
+<TotalPrincipal>34174.79585571</TotalPrincipal>
+<ClosingBalance>6111.46009002</ClosingBalance>
+</LoanSummary>
+
+
+
+<?xml version="1.0" ?>
+<reports>
+	<loanDetails>
+		<loanAgreement>
+			<field name="Income year of loan creation" value="2017"/>
+			<field name="Full term of loan in years" value="4"/>
+			<field name="Lodgement day of private company" value="2018-04-14"/>
+			<field name="Income year of computation" value="2021"/>
+			<field name="Opening balance of computation" value="6111.46009002"/>
+		</loanAgreement>
+		<repayments>
+			<repayment date="2017-07-03" value="10716"/>
+			<repayment date="2017-09-07" value="17665"/>
+			<repayment date="2018-08-12" value="30088"/>
+			<repayment date="2018-12-08" value="15286"/>
+			<repayment date="2019-12-31" value="35388"/>
+			<repayment date="2020-11-04" value="15472"/>
+			<repayment date="2021-04-12" value="36573"/>
+			<repayment date="2021-08-05" value="10660"/>
+		</repayments>
+	</loanDetails>
+</reports>
+
+
+
+<?xml version="1.0" ?>
+<LoanSummary xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="loan_response.xsd">
+<IncomeYear>2021</IncomeYear>
+<OpeningBalance>6111.46009002</OpeningBalance>
+<InterestRate>4.52000000</InterestRate>
+<MinYearlyRepayment>6387.69808609</MinYearlyRepayment>
+<TotalRepayment>52045.00000000</TotalRepayment>
+<RepaymentShortfall>0.00000000</RepaymentShortfall>
+<TotalInterest>95.35886988</TotalInterest>
+<TotalPrincipal>51949.64113012</TotalPrincipal>
+<ClosingBalance>0.00000000</ClosingBalance>
+</LoanSummary>
+
+
+
+paid off.
+
+
+-->

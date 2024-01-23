@@ -1,0 +1,145 @@
+<?xml version="1.0" ?>
+<reports>
+	<loanDetails>
+		<loanAgreement>
+			<field name="Income year of loan creation" value="2009"/>
+			<field name="Full term of loan in years" value="4"/>
+			<field name="Lodgement day of private company" value="2010-05-25"/>
+			<field name="Income year of computation" value="2012"/>
+			<field name="Principal amount of loan" value="64871"/>
+		</loanAgreement>
+		<repayments>
+			<repayment date="2009-09-13" value="15100"/>
+			<repayment date="2010-01-27" value="15841"/>
+			<repayment date="2010-08-09" value="26164"/>
+			<repayment date="2011-09-05" value="35776"/>
+			<repayment date="2012-05-21" value="3299"/>
+			<repayment date="2012-08-18" value="8714"/>
+			<repayment date="2013-08-30" value="11089"/>
+		</repayments>
+	</loanDetails>
+</reports>
+<!--
+
+
+<?xml version="1.0" ?>
+<reports>
+	<loanDetails>
+		<loanAgreement>
+			<field name="Income year of loan creation" value="2009"/>
+			<field name="Full term of loan in years" value="4"/>
+			<field name="Lodgement day of private company" value="2010-05-25"/>
+			<field name="Income year of computation" value="2010"/>
+			<field name="Opening balance of computation" value="64871"/>
+		</loanAgreement>
+		<repayments>
+			<repayment date="2009-09-13" value="15100"/>
+			<repayment date="2010-01-27" value="15841"/>
+			<repayment date="2010-08-09" value="26164"/>
+			<repayment date="2011-09-05" value="35776"/>
+			<repayment date="2012-05-21" value="3299"/>
+			<repayment date="2012-08-18" value="8714"/>
+			<repayment date="2013-08-30" value="11089"/>
+		</repayments>
+	</loanDetails>
+</reports>
+
+
+
+<?xml version="1.0" ?>
+<LoanSummary xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="loan_response.xsd">
+<IncomeYear>2010</IncomeYear>
+<OpeningBalance>64871.00000000</OpeningBalance>
+<InterestRate>5.75000000</InterestRate>
+<MinYearlyRepayment>9735.91497211</MinYearlyRepayment>
+<TotalRepayment>30941.00000000</TotalRepayment>
+<RepaymentShortfall>0.00000000</RepaymentShortfall>
+<TotalInterest>2651.05876712</TotalInterest>
+<TotalPrincipal>28289.94123288</TotalPrincipal>
+<ClosingBalance>36581.05876712</ClosingBalance>
+</LoanSummary>
+
+
+
+<?xml version="1.0" ?>
+<reports>
+	<loanDetails>
+		<loanAgreement>
+			<field name="Income year of loan creation" value="2009"/>
+			<field name="Full term of loan in years" value="4"/>
+			<field name="Lodgement day of private company" value="2010-05-25"/>
+			<field name="Income year of computation" value="2011"/>
+			<field name="Opening balance of computation" value="36581.05876712"/>
+		</loanAgreement>
+		<repayments>
+			<repayment date="2009-09-13" value="15100"/>
+			<repayment date="2010-01-27" value="15841"/>
+			<repayment date="2010-08-09" value="26164"/>
+			<repayment date="2011-09-05" value="35776"/>
+			<repayment date="2012-05-21" value="3299"/>
+			<repayment date="2012-08-18" value="8714"/>
+			<repayment date="2013-08-30" value="11089"/>
+		</repayments>
+	</loanDetails>
+</reports>
+
+
+
+<?xml version="1.0" ?>
+<LoanSummary xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="loan_response.xsd">
+<IncomeYear>2011</IncomeYear>
+<OpeningBalance>36581.05876712</OpeningBalance>
+<InterestRate>7.40000000</InterestRate>
+<MinYearlyRepayment>14041.26040590</MinYearlyRepayment>
+<TotalRepayment>26164.00000000</TotalRepayment>
+<RepaymentShortfall>0.00000000</RepaymentShortfall>
+<TotalInterest>977.73715425</TotalInterest>
+<TotalPrincipal>25186.26284575</TotalPrincipal>
+<ClosingBalance>11394.79592137</ClosingBalance>
+</LoanSummary>
+
+
+
+<?xml version="1.0" ?>
+<reports>
+	<loanDetails>
+		<loanAgreement>
+			<field name="Income year of loan creation" value="2009"/>
+			<field name="Full term of loan in years" value="4"/>
+			<field name="Lodgement day of private company" value="2010-05-25"/>
+			<field name="Income year of computation" value="2012"/>
+			<field name="Opening balance of computation" value="11394.79592137"/>
+		</loanAgreement>
+		<repayments>
+			<repayment date="2009-09-13" value="15100"/>
+			<repayment date="2010-01-27" value="15841"/>
+			<repayment date="2010-08-09" value="26164"/>
+			<repayment date="2011-09-05" value="35776"/>
+			<repayment date="2012-05-21" value="3299"/>
+			<repayment date="2012-08-18" value="8714"/>
+			<repayment date="2013-08-30" value="11089"/>
+		</repayments>
+	</loanDetails>
+</reports>
+
+
+
+<?xml version="1.0" ?>
+<LoanSummary xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="loan_response.xsd">
+<IncomeYear>2012</IncomeYear>
+<OpeningBalance>11394.79592137</OpeningBalance>
+<InterestRate>7.80000000</InterestRate>
+<MinYearlyRepayment>6372.33398628</MinYearlyRepayment>
+<TotalRepayment>39075.00000000</TotalRepayment>
+<RepaymentShortfall>0.00000000</RepaymentShortfall>
+<TotalInterest>160.27434263</TotalInterest>
+<TotalPrincipal>38914.72565737</TotalPrincipal>
+<ClosingBalance>0.00000000</ClosingBalance>
+</LoanSummary>
+
+
+
+paid off.
+
+
+-->

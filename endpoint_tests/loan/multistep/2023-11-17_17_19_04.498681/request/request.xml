@@ -1,0 +1,165 @@
+<?xml version="1.0" ?>
+<reports>
+	<loanDetails>
+		<loanAgreement>
+			<field name="Income year of loan creation" value="2008"/>
+			<field name="Full term of loan in years" value="6"/>
+			<field name="Lodgement day of private company" value="2009-01-05"/>
+			<field name="Income year of computation" value="2011"/>
+			<field name="Principal amount of loan" value="123507"/>
+		</loanAgreement>
+		<repayments>
+			<repayment date="2009-03-12" value="28307"/>
+			<repayment date="2009-05-16" value="4878"/>
+			<repayment date="2009-07-29" value="26373"/>
+			<repayment date="2009-08-02" value="37998"/>
+			<repayment date="2010-05-07" value="15633"/>
+			<repayment date="2010-10-28" value="6594"/>
+			<repayment date="2011-07-14" value="22705"/>
+			<repayment date="2012-01-22" value="28885"/>
+			<repayment date="2012-11-06" value="9830"/>
+			<repayment date="2013-01-19" value="31836"/>
+			<repayment date="2014-01-20" value="1012"/>
+			<repayment date="2014-07-06" value="16221"/>
+		</repayments>
+	</loanDetails>
+</reports>
+<!--
+
+
+<?xml version="1.0" ?>
+<reports>
+	<loanDetails>
+		<loanAgreement>
+			<field name="Income year of loan creation" value="2008"/>
+			<field name="Full term of loan in years" value="6"/>
+			<field name="Lodgement day of private company" value="2009-01-05"/>
+			<field name="Income year of computation" value="2009"/>
+			<field name="Opening balance of computation" value="123507"/>
+		</loanAgreement>
+		<repayments>
+			<repayment date="2009-03-12" value="28307"/>
+			<repayment date="2009-05-16" value="4878"/>
+			<repayment date="2009-07-29" value="26373"/>
+			<repayment date="2009-08-02" value="37998"/>
+			<repayment date="2010-05-07" value="15633"/>
+			<repayment date="2010-10-28" value="6594"/>
+			<repayment date="2011-07-14" value="22705"/>
+			<repayment date="2012-01-22" value="28885"/>
+			<repayment date="2012-11-06" value="9830"/>
+			<repayment date="2013-01-19" value="31836"/>
+			<repayment date="2014-01-20" value="1012"/>
+			<repayment date="2014-07-06" value="16221"/>
+		</repayments>
+	</loanDetails>
+</reports>
+
+
+
+<?xml version="1.0" ?>
+<LoanSummary xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="loan_response.xsd">
+<IncomeYear>2009</IncomeYear>
+<OpeningBalance>123507.00000000</OpeningBalance>
+<InterestRate>9.45000000</InterestRate>
+<MinYearlyRepayment>27902.57823628</MinYearlyRepayment>
+<TotalRepayment>33185.00000000</TotalRepayment>
+<RepaymentShortfall>0.00000000</RepaymentShortfall>
+<TotalInterest>10799.81987671</TotalInterest>
+<TotalPrincipal>22385.18012329</TotalPrincipal>
+<ClosingBalance>101121.81987671</ClosingBalance>
+</LoanSummary>
+
+
+
+<?xml version="1.0" ?>
+<reports>
+	<loanDetails>
+		<loanAgreement>
+			<field name="Income year of loan creation" value="2008"/>
+			<field name="Full term of loan in years" value="6"/>
+			<field name="Lodgement day of private company" value="2009-01-05"/>
+			<field name="Income year of computation" value="2010"/>
+			<field name="Opening balance of computation" value="101121.81987671"/>
+		</loanAgreement>
+		<repayments>
+			<repayment date="2009-03-12" value="28307"/>
+			<repayment date="2009-05-16" value="4878"/>
+			<repayment date="2009-07-29" value="26373"/>
+			<repayment date="2009-08-02" value="37998"/>
+			<repayment date="2010-05-07" value="15633"/>
+			<repayment date="2010-10-28" value="6594"/>
+			<repayment date="2011-07-14" value="22705"/>
+			<repayment date="2012-01-22" value="28885"/>
+			<repayment date="2012-11-06" value="9830"/>
+			<repayment date="2013-01-19" value="31836"/>
+			<repayment date="2014-01-20" value="1012"/>
+			<repayment date="2014-07-06" value="16221"/>
+		</repayments>
+	</loanDetails>
+</reports>
+
+
+
+<?xml version="1.0" ?>
+<LoanSummary xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="loan_response.xsd">
+<IncomeYear>2010</IncomeYear>
+<OpeningBalance>101121.81987671</OpeningBalance>
+<InterestRate>5.75000000</InterestRate>
+<MinYearlyRepayment>23842.92104305</MinYearlyRepayment>
+<TotalRepayment>80004.00000000</TotalRepayment>
+<RepaymentShortfall>0.00000000</RepaymentShortfall>
+<TotalInterest>2285.60361551</TotalInterest>
+<TotalPrincipal>77718.39638449</TotalPrincipal>
+<ClosingBalance>23403.42349222</ClosingBalance>
+</LoanSummary>
+
+
+
+<?xml version="1.0" ?>
+<reports>
+	<loanDetails>
+		<loanAgreement>
+			<field name="Income year of loan creation" value="2008"/>
+			<field name="Full term of loan in years" value="6"/>
+			<field name="Lodgement day of private company" value="2009-01-05"/>
+			<field name="Income year of computation" value="2011"/>
+			<field name="Opening balance of computation" value="23403.42349222"/>
+		</loanAgreement>
+		<repayments>
+			<repayment date="2009-03-12" value="28307"/>
+			<repayment date="2009-05-16" value="4878"/>
+			<repayment date="2009-07-29" value="26373"/>
+			<repayment date="2009-08-02" value="37998"/>
+			<repayment date="2010-05-07" value="15633"/>
+			<repayment date="2010-10-28" value="6594"/>
+			<repayment date="2011-07-14" value="22705"/>
+			<repayment date="2012-01-22" value="28885"/>
+			<repayment date="2012-11-06" value="9830"/>
+			<repayment date="2013-01-19" value="31836"/>
+			<repayment date="2014-01-20" value="1012"/>
+			<repayment date="2014-07-06" value="16221"/>
+		</repayments>
+	</loanDetails>
+</reports>
+
+
+
+<?xml version="1.0" ?>
+<LoanSummary xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="loan_response.xsd">
+<IncomeYear>2011</IncomeYear>
+<OpeningBalance>23403.42349222</OpeningBalance>
+<InterestRate>7.40000000</InterestRate>
+<MinYearlyRepayment>6971.84508966</MinYearlyRepayment>
+<TotalRepayment>6594.00000000</TotalRepayment>
+<RepaymentShortfall>377.84508966</RepaymentShortfall>
+<TotalInterest>1402.98436308</TotalInterest>
+<TotalPrincipal>5191.01563692</TotalPrincipal>
+<ClosingBalance>18212.40785530</ClosingBalance>
+</LoanSummary>
+
+
+
+shortfall.
+
+
+-->
